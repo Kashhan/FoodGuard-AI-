@@ -173,7 +173,7 @@ The result helps users quickly determine whether the food should be consumed or 
 
 # Project Structure
 
-The project follows a simple and modular structure to keep the code organized and easy to maintain.
+The project follows a clean and modular structure to keep the code organized and easy to maintain.
 
 
 FoodGuard-AI/
@@ -195,20 +195,22 @@ FoodGuard-AI/
 
 # Code Overview
 
-This section explains the main components of the FoodGuard-AI system.
+This section explains the main components of the **FoodGuard-AI system**.
+
+---
 
 ## Image Processing Module
 
 The `image_processing.py` module handles preprocessing of food images before they are passed to the machine learning model.
 
-Main tasks include:
+### Main Responsibilities
 
-- Image resizing
-- Image normalization
-- Noise reduction
-- Feature extraction
+- Image resizing  
+- Image normalization  
+- Noise reduction  
+- Feature extraction  
 
-Example:
+### Example Code
 
 ```python
 import cv2
@@ -220,10 +222,9 @@ def preprocess_image(image_path):
     return image
 Model Prediction Module
 
-The model_predict.py module loads the trained AI model and predicts the freshness category.
+The model_predict.py module loads the trained machine learning model and predicts the freshness category.
 
-Example:
-
+Example Code
 from tensorflow.keras.models import load_model
 
 model = load_model("model/food_freshness_model.h5")
@@ -235,18 +236,17 @@ Main Application
 
 The main.py file connects all modules and runs the system.
 
-Workflow:
+Workflow
 
-Load image
+Load food image
 
 Preprocess image
 
 Send image to AI model
 
-Display classification result
+Display freshness classification
 
-Example:
-
+Example Code
 from image_processing import preprocess_image
 from model_predict import predict_food
 
@@ -264,17 +264,19 @@ Food images captured by the user.
 
 Feature Extraction
 
-The model analyzes visual features such as:
+The AI model analyzes visual features such as:
 
 Color distribution
 
-Texture patterns
+Surface texture
+
+Visible mold patterns
 
 Surface irregularities
 
 Classification
 
-The model predicts one of the following classes:
+The system predicts one of the following classes:
 
 Fresh
 
@@ -282,44 +284,47 @@ Moderate Risk
 
 Spoiled
 
-The classification result helps users decide whether food is safe to consume.
+The classification result helps users determine whether food is safe to consume.
 
 Troubleshooting
 Model Not Loading
 
-Problem:
-Model file cannot be loaded.
+Problem
 
-Solution:
+The model file cannot be loaded.
 
-Check if the model file exists in the model directory.
+Solution
 
-Verify the correct model path.
+Ensure the model file exists in the model/ directory.
+
+Verify that the model path is correct.
 
 Image Not Detected
 
-Problem:
+Problem
+
 The system cannot read the input image.
 
-Solution:
+Solution
 
-Check if the image path is correct.
+Verify the image path.
 
 Ensure the image format is supported (JPG, PNG).
 
 Dependency Errors
 
-Problem:
-Missing Python packages.
+Problem
 
-Solution:
+Missing Python libraries.
+
+Solution
 
 Install dependencies again:
 
 pip install -r requirements.txt
 Future Improvements
 
-The following features can improve the system in future versions:
+The following improvements can enhance the system in future versions:
 
 Mobile application integration
 
@@ -327,7 +332,7 @@ Real-time camera-based freshness detection
 
 Larger training dataset
 
-Integration with smart kitchen devices
+Smart kitchen device integration
 
 Cloud-based AI model deployment
 
