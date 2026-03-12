@@ -34,13 +34,19 @@ STATUS_MAP = {
     "Spoiled":       {"status": "🚫 Do Not Eat",   "color": "red"},
 }
 
+STATUS_TEXT = {
+    "Fresh":         "Safe to Eat",
+    "Moderate Risk": "Use Caution",
+    "Spoiled":       "Do Not Eat",
+}
+
 @router.post("/predict")
 async def predict(file: UploadFile = File(...)):
 
     # Check 1 - Must be an image file
     if not file.content_type.startswith("image/"):
         raise HTTPException(
-            status_code=400, 
+            status_code=400,
             detail="Only image files are accepted (jpg, png, webp)"
         )
 
@@ -49,22 +55,20 @@ async def predict(file: UploadFile = File(...)):
     # Check 2 - File must not be empty
     if len(file_bytes) == 0:
         raise HTTPException(
-            status_code=400, 
+            status_code=400,
             detail="Uploaded file is empty"
         )
 
     # Check 3 - Max size 5MB
     if len(file_bytes) > 5 * 1024 * 1024:
         raise HTTPException(
-            status_code=400, 
+            status_code=400,
             detail="Image too large. Maximum size is 5MB"
         )
 
     if MOCK_MODE:
-        # Returns fake response for testing
         result = random.choice(MOCK_RESPONSES)
     else:
-        # Real Gemini — switch when API key is ready
         from services.gemini_service import analyze_food
         result = analyze_food(file_bytes)
 
@@ -85,10 +89,11 @@ async def predict(file: UploadFile = File(...)):
             "tips": result.get("tips", [])
         }
     }
+
 @router.post("/predict-with-voice")
 async def predict_with_voice(
     file: UploadFile = File(...),
-    language: str = "english"   # user sends language choice
+    language: str = "english"
 ):
     # Validate
     if not file.content_type.startswith("image/"):
@@ -128,18 +133,19 @@ async def predict_with_voice(
         "tips": result.get("tips", [])
     }
 
-    # Convert to speech in selected language
+    # Convert to speech
     from services.tts_service import text_to_speech, create_speech_text
     speech_text, lang_code = create_speech_text(prediction, recommendation, language)
     audio_bytes = text_to_speech(speech_text, lang_code)
 
+    # ← Fixed: no emojis in headers
     return StreamingResponse(
         io.BytesIO(audio_bytes),
         media_type="audio/mpeg",
         headers={
             "X-Prediction-Class": label,
             "X-Confidence": str(prediction["confidence"]),
-            "X-Status": recommendation["status"],
+            "X-Status": STATUS_TEXT.get(label, "Use Caution"),
             "X-Language": language
         }
     )

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Test</title>
+</head>
+<body>
+    <h2>FoodGuard Voice Test</h2>
+    
+    <input type="file" id="imageInput" accept="image/*">
+    
+    <select id="language">
+        <option value="english">English</option>
+        <option value="urdu">Urdu</option>
+    </select>
+    
+    <button onclick="testVoice()">Analyze & Hear Result</button>
+    
+    <br><br>
+    <audio id="audioPlayer" controls></audio>
+    <p id="result"></p>
+
+    <script>
+    async function testVoice() {
+        const file = document.getElementById('imageInput').files[0];
+        const language = document.getElementById('language').value;
+        
+        if (!file) {
+            alert('Please select an image first!');
+            return;
+        }
+
+        document.getElementById('result').innerText = 'Analyzing...';
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        const response = await fetch(
+            `http://127.0.0.1:8000/api/v1/predict-with-voice?language=${language}`,
+            { method: 'POST', body: formData }
+        );
+
+        const blob = await response.blob();
+        const audioUrl = URL.createObjectURL(blob);
+        
+        const player = document.getElementById('audioPlayer');
+        player.src = audioUrl;
+        player.play();
+
+        // Show prediction info from headers
+        const predClass = response.headers.get('x-prediction-class');
+        const confidence = response.headers.get('x-confidence');
+        const status = response.headers.get('x-status');
+        
+        document.getElementById('result').innerText = 
+            `Result: ${predClass} | Confidence: ${confidence}% | Status: ${status}`;
+    }
+    </script>
+</body>
+</html>
