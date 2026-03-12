@@ -9,206 +9,212 @@ FoodGuard-AI helps users make safer food consumption decisions while also reduci
 
 # Overview
 
-FoodGuard-AI is designed to provide an intelligent solution for **food freshness detection using artificial intelligence and computer vision**.
+FoodGuard-AI provides an intelligent solution for **food freshness detection using artificial intelligence and computer vision**.
 
 The system analyzes food images captured by users and detects visual patterns related to spoilage and freshness. Based on this analysis, the AI model classifies food into different freshness categories and provides safety recommendations.
 
-The system performs the following main operations:
+### System Workflow
 
-1. **Image Input**  
-   The user captures or uploads an image of food.
+1. **Image Input**
+   - User uploads or captures an image of food.
 
-2. **Image Processing**  
-   The system preprocesses the image using computer vision techniques.
+2. **Image Processing**
+   - The image is preprocessed using computer vision techniques.
 
-3. **AI Model Analysis**  
-   The machine learning model analyzes the image to identify spoilage indicators.
+3. **AI Model Analysis**
+   - The machine learning model analyzes the image for spoilage indicators.
 
-4. **Freshness Classification**  
-   Food is categorized into one of the following classes:
-   - Fresh
-   - Moderate Risk
-   - Spoiled
+4. **Freshness Classification**
+   - The food is categorized as:
+     - Fresh
+     - Moderate Risk
+     - Spoiled
 
-5. **Safety Recommendation**  
-   The system provides guidance on whether the food is safe to consume.
+5. **Safety Recommendation**
+   - The system advises whether the food should be consumed or discarded.
 
 ---
 
 # Features
 
 ## Image-Based Food Freshness Detection
-The system uses image analysis to determine food freshness levels using machine learning algorithms.
+The system uses image analysis to determine food freshness using machine learning.
 
-## Spoilage Detection using AI
-The AI model detects visual indicators of spoilage such as:
+## Spoilage Detection
+The AI model detects visual indicators such as:
 
 - Mold growth
 - Color discoloration
 - Surface texture changes
 
 ## Food Safety Classification
+
 FoodGuard-AI classifies food into three categories:
 
-- **Fresh** – Safe to consume  
-- **Moderate Risk** – Consume with caution  
-- **Spoiled** – Unsafe to eat  
+- **Fresh** – Safe to consume
+- **Moderate Risk** – Consume with caution
+- **Spoiled** – Unsafe to eat
 
 ## Fast Image Analysis
-Users can quickly upload or capture images and receive AI-based freshness results.
+Users can upload images and quickly receive AI-based freshness predictions.
 
-## AI-Based Recommendations
-The system provides safety guidance to help users decide whether food should be consumed or discarded.
+## AI Recommendations
+The system provides suggestions about whether the food should be eaten or discarded.
 
 ---
 
 # Architecture
 
-The FoodGuard-AI system follows a **computer vision and machine learning pipeline architecture**.
-
+The system follows a **computer vision + machine learning pipeline**:
 
 User Image → Image Processing → AI Model → Freshness Classification → Safety Recommendation
 
-
 ### Image Processing
-Food images are preprocessed using computer vision techniques such as resizing, normalization, and noise reduction.
+Food images are preprocessed using:
+
+- Image resizing
+- Normalization
+- Noise reduction
 
 ### Machine Learning Analysis
-A trained machine learning model analyzes the processed image to detect patterns related to spoilage and freshness.
+The trained model analyzes patterns related to spoilage and freshness.
 
 ### Classification Output
-Based on the analysis, the system predicts the freshness level and provides recommendations to
+The model predicts the freshness category and provides a recommendation.
+
+---
+
+# Project Structure
+
+```
+FoodGuard-AI/
+│
+├── dataset/                     # Food image dataset
+├── model/                       # Trained AI model files
+│
+├── src/                         # Source code
+│   ├── image_processing.py      # Image preprocessing
+│   ├── model_predict.py         # Model loading and prediction
+│   └── main.py                  # Main application file
+│
+├── requirements.txt             # Dependencies
+├── README.md                    # Documentation
+└── LICENSE                      # License file
+```
+
+---
 
 # Prerequisites
 
-Before running FoodGuard-AI, make sure the following requirements are installed on your system:
+Before running FoodGuard-AI install:
 
-- Python 3.8 or higher
-- pip (Python package manager)
+- Python 3.8+
+- pip
 - OpenCV
 - TensorFlow or PyTorch
 - NumPy
-- Matplotlib (optional for visualization)
+- Matplotlib (optional)
 
-You can install Python from:  
+Download Python:
+
 https://www.python.org/downloads/
 
 ---
 
 # Installation
 
-Follow these steps to install and set up the project.
-
-## 1. Clone the Repository
+## 1 Clone Repository
 
 ```bash
 git clone https://github.com/your-username/FoodGuard-AI.git
 cd FoodGuard-AI
-2. Create Virtual Environment (Recommended)
-python -m venv venv
+```
 
-Activate the virtual environment:
+## 2 Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Activate Virtual Environment
 
 Windows
 
+```bash
 venv\Scripts\activate
+```
 
 Mac / Linux
 
+```bash
 source venv/bin/activate
-3. Install Dependencies
+```
 
-Install all required Python packages:
+## 3 Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-If a requirements file is not available, install the main libraries manually:
+If requirements file is missing:
 
+```bash
 pip install opencv-python tensorflow numpy matplotlib
-Running the Application
+```
 
-After installing all dependencies, you can run the application.
+---
 
-python main.py
+# Running the Application
 
-If the project uses a notebook:
+Run the program using:
 
+```bash
+python src/main.py
+```
+
+If using Jupyter Notebook:
+
+```bash
 jupyter notebook
+```
 
-Open the notebook and run all cells to start the food freshness detection system.
+---
 
-Usage
+# Usage
 
-FoodGuard-AI is designed to be simple and easy to use.
+1. Run the application.
+2. Upload or capture a food image.
+3. The system processes the image.
+4. The AI model analyzes the image.
+5. Freshness classification is displayed.
 
-Image Upload Mode
+### Example Output
 
-Run the application.
-
-Upload or capture an image of the food item.
-
-The system will process the image using computer vision techniques.
-
-The AI model will analyze the image.
-
-The system will display the freshness classification.
-
-Example Output:
-
-
-Food Status: Fresh  
-Confidence Score: 92%  
+```
+Food Status: Fresh
+Confidence Score: 92%
 Recommendation: Safe to consume
+```
 
+### Possible Results
 
-Possible classifications:
-
-Fresh – Food is safe to consume.
-
-Moderate Risk – Food should be consumed with caution.
-
-Spoiled – Food is not safe to eat.
-
-The result helps users quickly determine whether the food should be consumed or discarded.
-
-# Project Structure
-
-The project follows a clean and modular structure to keep the code organized and easy to maintain.
-
-
-FoodGuard-AI/
-│
-├── dataset/ # Food image dataset
-├── model/ # Trained AI model files
-│
-├── src/ # Source code
-│ ├── image_processing.py # Image preprocessing and feature extraction
-│ ├── model_predict.py # Model loading and prediction logic
-│ └── main.py # Main application file
-│
-├── requirements.txt # Project dependencies
-├── README.md # Project documentation
-└── LICENSE # License information
-
+- **Fresh** → Safe to eat
+- **Moderate Risk** → Eat with caution
+- **Spoiled** → Do not eat
 
 ---
 
 # Code Overview
 
-This section explains the main components of the **FoodGuard-AI system**.
-
----
-
 ## Image Processing Module
 
-The `image_processing.py` module handles preprocessing of food images before they are passed to the machine learning model.
+`image_processing.py`
 
-### Main Responsibilities
+Responsible for:
 
-- Image resizing  
-- Image normalization  
-- Noise reduction  
-- Feature extraction  
+- Image resizing
+- Normalization
+- Noise reduction
 
 ### Example Code
 
@@ -217,14 +223,22 @@ import cv2
 
 def preprocess_image(image_path):
     image = cv2.imread(image_path)
-    image = cv2.resize(image, (224, 224))
+    image = cv2.resize(image, (224,224))
     image = image / 255.0
     return image
-Model Prediction Module
+```
 
-The model_predict.py module loads the trained machine learning model and predicts the freshness category.
+---
 
-Example Code
+## Model Prediction Module
+
+`model_predict.py`
+
+Loads the trained AI model and predicts food freshness.
+
+### Example Code
+
+```python
 from tensorflow.keras.models import load_model
 
 model = load_model("model/food_freshness_model.h5")
@@ -232,21 +246,24 @@ model = load_model("model/food_freshness_model.h5")
 def predict_food(image):
     prediction = model.predict(image)
     return prediction
-Main Application
+```
 
-The main.py file connects all modules and runs the system.
+---
 
-Workflow
+## Main Application
 
-Load food image
+`main.py`
 
-Preprocess image
+Workflow:
 
-Send image to AI model
+1 Load image  
+2 Preprocess image  
+3 Run model prediction  
+4 Display result
 
-Display freshness classification
+### Example Code
 
-Example Code
+```python
 from image_processing import preprocess_image
 from model_predict import predict_food
 
@@ -254,90 +271,67 @@ image = preprocess_image("sample_food.jpg")
 result = predict_food(image)
 
 print("Food Freshness Prediction:", result)
-AI Model Explanation
+```
 
-FoodGuard-AI uses machine learning and computer vision techniques to detect food freshness.
+---
 
-Model Input
+# AI Model Explanation
 
-Food images captured by the user.
+The AI model analyzes visual food features including:
 
-Feature Extraction
+- Color distribution
+- Surface texture
+- Mold patterns
+- Structural irregularities
 
-The AI model analyzes visual features such as:
+The model then predicts one of the following categories:
 
-Color distribution
+- Fresh
+- Moderate Risk
+- Spoiled
 
-Surface texture
+---
 
-Visible mold patterns
+# Troubleshooting
 
-Surface irregularities
+## Model Not Loading
 
-Classification
+Ensure:
 
-The system predicts one of the following classes:
+- Model exists in `model/` directory
+- Correct model path is used
 
-Fresh
+## Image Not Detected
 
-Moderate Risk
+Check:
 
-Spoiled
+- Image path
+- Image format (JPG, PNG)
 
-The classification result helps users determine whether food is safe to consume.
-
-Troubleshooting
-Model Not Loading
-
-Problem
-
-The model file cannot be loaded.
-
-Solution
-
-Ensure the model file exists in the model/ directory.
-
-Verify that the model path is correct.
-
-Image Not Detected
-
-Problem
-
-The system cannot read the input image.
-
-Solution
-
-Verify the image path.
-
-Ensure the image format is supported (JPG, PNG).
-
-Dependency Errors
-
-Problem
-
-Missing Python libraries.
-
-Solution
+## Missing Dependencies
 
 Install dependencies again:
 
+```bash
 pip install -r requirements.txt
-Future Improvements
+```
 
-The following improvements can enhance the system in future versions:
+---
 
-Mobile application integration
+# Future Improvements
 
-Real-time camera-based freshness detection
+Possible enhancements:
 
-Larger training dataset
+- Mobile application support
+- Real-time camera freshness detection
+- Larger training dataset
+- Smart kitchen integration
+- Cloud AI deployment
 
-Smart kitchen device integration
+---
 
-Cloud-based AI model deployment
+# License
 
-License
+This project is licensed under the **MIT License**.
 
-This project is licensed under the MIT License.
-
-You are free to use, modify, and distribute this software for educational and research purposes.
+You are free to use, modify, and distribute it for educational and research purposes.
