@@ -5,7 +5,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+API_KEY = os.getenv("GEMINI_API_KEY")
+print(f"API Key loaded: {API_KEY[:10]}...")
+
+client = genai.Client(api_key=API_KEY)
 
 PROMPT = """
 You are a food safety expert. Analyze this food image carefully.
@@ -22,7 +25,7 @@ def analyze_food(file_bytes: bytes) -> dict:
     image = Image.open(io.BytesIO(file_bytes)).convert("RGB")
     
     response = client.models.generate_content(
-        model="gemini-2.0-flash-lite",
+          model="gemini-2.5-flash",
         contents=[PROMPT, image]
     )
     
