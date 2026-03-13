@@ -1,34 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Result() {
   const [activeTab, setActiveTab] = useState("overview");
+  const [analysis, setAnalysis] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
   const navigate = useNavigate();
 
-  // Mock analysis data
-  const analysis = {
-    status: "Fresh",
-    confidence: 94.5,
-    timestamp: new Date().toLocaleString(),
-    foodType: "Apple",
-    recommendations: [
-      "Store in refrigerator at 4°C for optimal freshness",
-      "Consume within 3-5 days",
-      "Keep away from direct sunlight",
-    ],
-    indicators: [
-      { name: "Color", score: 96, description: "Optimal color saturation" },
-      { name: "Texture", score: 92, description: "Firm and consistent" },
-      { name: "Surface", score: 95, description: "No visible defects" },
-      { name: "Freshness", score: 94, description: "Peak freshness" },
-    ],
-    nutritionalInfo: {
-      calories: "95 kcal",
-      sugar: "19g",
-      fiber: "4g",
-      vitaminC: "14%",
-    },
-  };
+  useEffect(() => {
+    // Get data from session storage
+    const storedAnalysis = sessionStorage.getItem("analysisResult");
+    const storedImage = sessionStorage.getItem("analysisImage");
+
+    if (storedAnalysis) {
+      setAnalysis(JSON.parse(storedAnalysis));
+    }
+    
+    if (storedImage) {
+      setImageUrl(storedImage);
+    }
+  }, []);
+
+  if (!analysis) {
+    return (
+      <div style={{ textAlign: "center", padding: "4rem" }}>
+        <h2>No analysis data found</h2>
+        <button className="btn" onClick={() => navigate("/upload")}>
+          Upload an Image
+        </button>
+      </div>
+    );
+  }
+
+  const { prediction, recommendation } = analysis;
 
   const containerStyle = {
     maxWidth: "1000px",
@@ -44,8 +48,8 @@ function Result() {
   const statusBadgeStyle = {
     display: "inline-block",
     padding: "0.5rem 1.5rem",
-    background: "rgba(5, 150, 105, 0.1)",
-    color: "#059669",
+    background: `rgba(${recommendation.color === "green" ? "5, 150, 105" : recommendation.color === "orange" ? "245, 158, 11" : "220, 38, 38"}, 0.1)`,
+    color: recommendation.color === "green" ? "#059669" : recommendation.color === "orange" ? "#f59e0b" : "#dc2626",
     borderRadius: "2rem",
     fontSize: "1.125rem",
     fontWeight: "600",
@@ -56,7 +60,7 @@ function Result() {
     width: "120px",
     height: "120px",
     borderRadius: "50%",
-    background: `conic-gradient(#059669 0deg ${(analysis.confidence / 100) * 360}deg, rgba(255,255,255,0.1) ${(analysis.confidence / 100) * 360}deg 360deg)`,
+    background: `conic-gradient(${recommendation.color === "green" ? "#059669" : recommendation.color === "orange" ? "#f59e0b" : "#dc2626"} 0deg ${(prediction.confidence / 100) * 360}deg, rgba(255,255,255,0.1) ${(prediction.confidence / 100) * 360}deg 360deg)`,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -72,37 +76,45 @@ function Result() {
     cursor: "pointer",
     fontSize: "1rem",
     fontWeight: "500",
-    transition: "all 0.3s",
-  });
-
-  const indicatorBarStyle = (score) => ({
-    height: "8px",
-    width: `${score}%`,
-    background: "linear-gradient(90deg, #059669, #10b981)",
-    borderRadius: "4px",
-    transition: "width 0.3s ease",
   });
 
   return (
     <div style={containerStyle}>
       <div style={headerStyle}>
         <span style={statusBadgeStyle}>
-          {analysis.status} • {analysis.foodType}
+          {recommendation.status}
         </span>
         <h1>Analysis Complete</h1>
-        <p style={{ color: "#94a3b8" }}>{analysis.timestamp}</p>
+        <p style={{ color: "#94a3b8" }}>File: {analysis.filename}</p>
       </div>
+
+      {/* Image Preview */}
+      {imageUrl && (
+        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
+          <img
+            src={imageUrl}
+            alt="Analyzed food"
+            style={{
+              maxWidth: "300px",
+              maxHeight: "200px",
+              borderRadius: "1rem",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+            }}
+          />
+        </div>
+      )}
 
       {/* Confidence Score */}
       <div className="card" style={{ marginBottom: "2rem", textAlign: "center" }}>
         <div style={confidenceCircleStyle}>
           <div style={{ textAlign: "center" }}>
-            <div style={{ fontSize: "2rem", fontWeight: "700", color: "#059669" }}>
-              {analysis.confidence}%
+            <div style={{ fontSize: "2rem", fontWeight: "700", color: recommendation.color === "green" ? "#059669" : recommendation.color === "orange" ? "#f59e0b" : "#dc2626" }}>
+              {prediction.confidence}%
             </div>
             <div style={{ fontSize: "0.875rem", color: "#94a3b8" }}>Confidence</div>
           </div>
         </div>
+        <p style={{ color: "#94a3b8", marginTop: "1rem" }}>{prediction.reason}</p>
       </div>
 
       {/* Tabs */}
@@ -110,11 +122,8 @@ function Result() {
         <button style={tabStyle("overview")} onClick={() => setActiveTab("overview")}>
           Overview
         </button>
-        <button style={tabStyle("indicators")} onClick={() => setActiveTab("indicators")}>
-          Quality Indicators
-        </button>
-        <button style={tabStyle("nutrition")} onClick={() => setActiveTab("nutrition")}>
-          Nutritional Info
+        <button style={tabStyle("details")} onClick={() => setActiveTab("details")}>
+          Details
         </button>
       </div>
 
@@ -124,7 +133,7 @@ function Result() {
           <div>
             <h3 style={{ color: "#059669", marginBottom: "1.5rem" }}>Recommendations</h3>
             <ul style={{ listStyle: "none", padding: 0 }}>
-              {analysis.recommendations.map((rec, index) => (
+              {recommendation.tips.map((tip, index) => (
                 <li
                   key={index}
                   style={{
@@ -138,51 +147,29 @@ function Result() {
                   }}
                 >
                   <span style={{ color: "#059669", fontSize: "1.25rem" }}>✓</span>
-                  {rec}
+                  {tip}
                 </li>
               ))}
             </ul>
           </div>
         )}
 
-        {activeTab === "indicators" && (
+        {activeTab === "details" && (
           <div>
-            <h3 style={{ color: "#059669", marginBottom: "1.5rem" }}>Quality Indicators</h3>
-            {analysis.indicators.map((indicator, index) => (
-              <div key={index} style={{ marginBottom: "1.5rem" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
-                  <span>{indicator.name}</span>
-                  <span style={{ color: "#059669", fontWeight: "600" }}>{indicator.score}%</span>
-                </div>
-                <div style={{ background: "rgba(255,255,255,0.1)", borderRadius: "4px", height: "8px", marginBottom: "0.5rem" }}>
-                  <div style={indicatorBarStyle(indicator.score)} />
-                </div>
-                <p style={{ color: "#94a3b8", fontSize: "0.875rem" }}>{indicator.description}</p>
+            <h3 style={{ color: "#059669", marginBottom: "1.5rem" }}>Analysis Details</h3>
+            <div style={{ display: "grid", gap: "1rem" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "0.75rem", background: "rgba(255,255,255,0.05)", borderRadius: "0.5rem" }}>
+                <span>Food Classification:</span>
+                <span style={{ color: "#059669", fontWeight: "600" }}>{prediction.class}</span>
               </div>
-            ))}
-          </div>
-        )}
-
-        {activeTab === "nutrition" && (
-          <div>
-            <h3 style={{ color: "#059669", marginBottom: "1.5rem" }}>Nutritional Information</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1rem" }}>
-              {Object.entries(analysis.nutritionalInfo).map(([key, value]) => (
-                <div
-                  key={key}
-                  style={{
-                    padding: "1rem",
-                    background: "rgba(255,255,255,0.05)",
-                    borderRadius: "0.5rem",
-                    textAlign: "center",
-                  }}
-                >
-                  <div style={{ fontSize: "0.875rem", color: "#94a3b8", marginBottom: "0.5rem" }}>
-                    {key.charAt(0).toUpperCase() + key.slice(1)}
-                  </div>
-                  <div style={{ fontSize: "1.25rem", fontWeight: "600", color: "#059669" }}>{value}</div>
-                </div>
-              ))}
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "0.75rem", background: "rgba(255,255,255,0.05)", borderRadius: "0.5rem" }}>
+                <span>Confidence Score:</span>
+                <span style={{ color: "#059669", fontWeight: "600" }}>{prediction.confidence}%</span>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "0.75rem", background: "rgba(255,255,255,0.05)", borderRadius: "0.5rem" }}>
+                <span>Safety Status:</span>
+                <span style={{ color: "#059669", fontWeight: "600" }}>{recommendation.status}</span>
+              </div>
             </div>
           </div>
         )}
@@ -193,8 +180,13 @@ function Result() {
         <button className="btn" onClick={() => navigate("/upload")}>
           Scan Another Item
         </button>
-        <button className="btn btn-outline" onClick={() => window.print()}>
-          Download Report
+        <button className="btn btn-outline" onClick={() => {
+          // Clear session data
+          sessionStorage.removeItem("analysisResult");
+          sessionStorage.removeItem("analysisImage");
+          navigate("/");
+        }}>
+          Back to Home
         </button>
       </div>
     </div>
