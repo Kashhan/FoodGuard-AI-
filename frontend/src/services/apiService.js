@@ -1,5 +1,5 @@
 // Direct API URLs - Config ki zaroorat nahi
-const API_BASE_URL = "http://localhost:8080";  // Hardcoded for testing
+const API_BASE_URL = "http://localhost:8000";  // Hardcoded for testing
 const API_VERSION = "api/v1";
 
 const API_ENDPOINTS = {
@@ -95,20 +95,22 @@ class ApiService {
     }
   }
 
-  // Analyze food with voice response
-  async analyzeFoodWithVoice(imageFile, language = "english") {
+ // Analyze food with voice response
+async analyzeFoodWithVoice(imageFile, language = "english") {
     const formData = new FormData();
     formData.append("file", imageFile);
-    formData.append("language", language);
 
     try {
-      console.log("📤 Sending image for voice analysis...");
+      console.log("📤 Sending image for voice analysis...", language);
       
-      const response = await fetch(API_ENDPOINTS.PREDICT_WITH_VOICE, {
-        method: "POST",
-        mode: 'cors',
-        body: formData,
-      });
+      const response = await fetch(
+        `${API_ENDPOINTS.PREDICT_WITH_VOICE}?language=${language}`,
+        {
+          method: "POST",
+          mode: 'cors',
+          body: formData,
+        }
+      );
 
       console.log("📥 Voice response status:", response.status);
 
