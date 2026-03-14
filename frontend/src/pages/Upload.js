@@ -110,8 +110,11 @@ function Upload({ showToast }) {
         if (language !== "none") {
           const voiceResult = await apiService.analyzeFoodWithVoice(image, language);
           if (voiceResult.success) {
-            setVoiceResponse(voiceResult.audioBlob);
-          }
+    setVoiceResponse(voiceResult.audioBlob);
+    // Save audio URL for result page
+    const audioUrl = URL.createObjectURL(voiceResult.audioBlob);
+    sessionStorage.setItem("audioUrl", audioUrl);
+}
         }
         
         // Navigate to result after short delay
