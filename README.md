@@ -336,6 +336,7 @@ Possible enhancements:
 - Larger training dataset
 - Smart kitchen integration
 - Cloud AI deployment
+ ( This project showcases how AI and computer vision can help improve food safety while supporting smarter and more sustainable food consumption.)
 
 ---
 
