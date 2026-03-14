@@ -89,17 +89,27 @@ The model predicts the freshness category and provides a recommendation.
 ```
 FoodGuard-AI/
 │
-├── dataset/                     # Food image dataset
-├── model/                       # Trained AI model files
+├── Backend/                    # Python backend
+│   ├── routes/
+│   │   └── predict.py          # Image prediction API
+│   ├── services/
+│   │   ├── gemini_service.py   # AI analysis
+│   │   └── tts_service.py      # Text-to-speech
+│   ├── main.py                 # Backend entry point
+│   └── requirements.txt        # Python dependencies
 │
-├── src/                         # Source code
-│   ├── image_processing.py      # Image preprocessing
-│   ├── model_predict.py         # Model loading and prediction
-│   └── main.py                  # Main application file
+├── frontend/                   # React frontend
+│   ├── src/
+│   │   ├── components/         # UI components
+│   │   ├── pages/              # Home, Upload, Result pages
+│   │   ├── services/           # API calls
+│   │   ├── config/             # API configuration
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
 │
-├── requirements.txt             # Dependencies
-├── README.md                    # Documentation
-└── LICENSE                      # License file
+├── README.md                   # Project documentation
+└── .gitignore                  # Git ignore rules
 ```
 
 ---
