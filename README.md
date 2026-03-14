@@ -1,4 +1,4 @@
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/6f6a3cde-630b-423a-a564-7c4b544c8150" /># FoodGuard-AI
+# FoodGuard-AI
 ## AI Food Freshness and Safety Detection System
 
 A working demonstration of an **AI-powered food freshness detection system** that analyzes food images using computer vision and machine learning techniques. The system evaluates visual indicators such as **color changes, mold growth, and texture deterioration** to determine whether food is fresh, moderately risky, or spoiled.
