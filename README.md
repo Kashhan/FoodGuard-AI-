@@ -115,19 +115,18 @@ FoodGuard-AI/
 ---
 
 # Prerequisites
-
-Before running FoodGuard-AI install:
-
-- Python 3.8+
-- pip
-- OpenCV
-- TensorFlow or PyTorch
-- NumPy
-- Matplotlib (optional)
+- Before running FoodGuard-AI, install the following:
+- Python 3.8+ – Required to run the backend server
+- pip – Used to install Python dependencies
+- Node.js & npm – Required to run the React frontend
+- Google Gemini API Key – Used for AI food analysis and Live AI Agent responses
+- Internet Connection – Required for Gemini API communication
 
 Download Python:
-
 https://www.python.org/downloads/
+
+Download Node.js:
+https://nodejs.org/
 
 ---
 
