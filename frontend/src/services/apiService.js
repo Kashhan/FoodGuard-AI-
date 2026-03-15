@@ -12,30 +12,26 @@ const API_ENDPOINTS = {
 class ApiService {
   // Test connection
   async testConnection() {
-    try {
-      const response = await fetch(API_ENDPOINTS.TEST, {
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-          'Accept': 'application/json',
-        },
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      const data = await response.json();
-      console.log("✅ Backend connected:", data);
-      return { success: true, data };
-    } catch (error) {
-      console.error("❌ Connection failed:", error);
-      return { 
-        success: false, 
-        error: "Cannot connect to backend. Make sure backend is running on port 8080" 
-      };
+  try {
+    const response = await fetch(API_ENDPOINTS.TEST, {
+      method: "GET",
+      mode: "cors"
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+
+    console.log("✅ Backend connected");
+    return { success: true };
+  } catch (error) {
+    console.error("❌ Connection failed:", error);
+    return {
+      success: false,
+      error: "Cannot connect to backend server"
+    };
   }
+}
 
   // Check API health
   async checkHealth() {
