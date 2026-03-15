@@ -5,15 +5,33 @@ A working demonstration of an **AI-powered food freshness detection system** tha
 
 FoodGuard-AI helps users make safer food consumption decisions while also reducing unnecessary **food waste** by providing quick AI-based freshness detection.
 
+🌐 **Live Project Documentation:**  
+https://food-guard-doc.vercel.app/
+
+Developed for the **Google Gemini Live Agent Challenge** using Google Gemini AI and Google Cloud technologies.
+
 ---
 
-# Overview
+# 1. PROJECT
+## INTELLIGENT VISION AI
 
-FoodGuard-AI provides an intelligent solution for **food freshness detection using artificial intelligence and computer vision**.
+FoodGuard-AI is a specialized AI system that analyzes food images to detect freshness and spoilage indicators. Using advanced computer vision and machine learning, the system evaluates visual cues like color degradation, mold formation, and textural changes to provide real-time food safety assessments.
 
-The system analyzes food images captured by users and detects visual patterns related to spoilage and freshness. Based on this analysis, the AI model classifies food into different freshness categories and provides safety recommendations.
+Developed as a practical AI solution to reduce food waste and prevent foodborne illnesses by empowering users with instant, data-driven insights about their food.
 
-### System Workflow
+Built for the **GeminiAgentChallenge** — a platform that gives developers the opportunity to build impactful AI systems that solve real-world problems.
+
+---
+
+# 2. PROJECT OVERVIEW
+
+FoodGuard-AI transforms how people assess food safety. Instead of relying only on expiration dates or subjective judgment, users can simply take a photo and receive an instant AI-powered analysis.
+
+The system classifies food into freshness categories and provides clear, actionable recommendations.
+
+This project demonstrates the practical application of **computer vision in everyday life**, helping households and individuals make safer and more informed decisions while contributing to global efforts to reduce food waste.
+
+## System Workflow
 
 1. **Image Input**
    - User uploads or captures an image of food.
@@ -35,313 +53,394 @@ The system analyzes food images captured by users and detects visual patterns re
 
 ---
 
-# Features
+# 3. KEY FEATURES
 
-## Image-Based Food Freshness Detection
-The system uses image analysis to determine food freshness using machine learning.
-
-## Spoilage Detection
-The AI model detects visual indicators such as:
-
-- Mold growth
-- Color discoloration
-- Surface texture changes
-
-## Food Safety Classification
-
-FoodGuard-AI classifies food into three categories:
-
-- **Fresh** – Safe to consume
-- **Moderate Risk** – Consume with caution
-- **Spoiled** – Unsafe to eat
-
-## Fast Image Analysis
-Users can upload images and quickly receive AI-based freshness predictions.
-
-## AI Recommendations
-The system provides suggestions about whether the food should be eaten or discarded.
+| Feature | Description |
+|-------|-------------|
+| **Image-Based Detection** | Upload or capture food images and AI analyzes visual spoilage indicators instantly |
+| **Multi-Level Classification** | Categorizes food into three freshness levels with confidence scores |
+| **Visual Spoilage Analysis** | Detects mold, discoloration, and texture deterioration |
+| **Actionable Recommendations** | Clear guidance whether food is safe to eat or should be discarded |
+| **Fast Processing** | Optimized image pipeline delivers quick results |
+| **AI Integration** | Uses Google Gemini AI for enhanced analysis |
+| **Modular Design** | Clean architecture separating frontend, backend, and AI logic |
 
 ---
 
-# Architecture
+# 4. SYSTEM ARCHITECTURE
 
-The system follows a **computer vision + machine learning pipeline**:
+## User Interface Layer
+**Frontend (Web / Mobile Interface)**
 
-User Image → Image Processing → AI Model → Freshness Classification → Safety Recommendation
+Responsibilities:
 
-### Image Processing
-Food images are preprocessed using:
-
-- Image resizing
-- Normalization
-- Noise reduction
-
-### Machine Learning Analysis
-The trained model analyzes patterns related to spoilage and freshness.
-
-### Classification Output
-The model predicts the freshness category and provides a recommendation.
+- Image Upload or Camera Capture
+- User Interface Interaction
+- Display Detection Results
+- Send Image Request to Backend API
 
 ---
 
-# Project Structure
+## Backend Layer
+
+Handles application logic and communication with AI services.
+
+Components:
+
+- API Endpoints
+- Image Handler
+- Preprocessing Logic
+- Request Processing
+- AI Model Invocation
+
+---
+
+## AI Processing Layer
+
+Core intelligence of the system.
+
+Responsibilities:
+
+- Computer Vision Analysis
+- Pattern Recognition
+- Freshness Classification
+- Spoilage Detection
+
+---
+
+## Response Layer
+
+Generates the final output returned to the user.
+
+Output includes:
+
+- Freshness Category
+- Confidence Score
+- Safety Recommendation
+- Visual Indicators
+
+---
+
+# 5. TECHNOLOGY STACK
+
+| Layer | Technology |
+|------|-----------|
+| **Frontend** | React.js, HTML5, CSS3, JavaScript |
+| **Backend** | Python, FastAPI, OpenCV |
+| **Machine Learning** | TensorFlow, Keras |
+| **AI Integration** | Google Gemini API |
+| **Cloud Deployment** | Google Cloud Run |
+| **Development Tools** | Git, GitHub, VS Code, Jupyter Notebook |
+
+---
+
+# 6. PROJECT STRUCTURE
 
 ```
 FoodGuard-AI/
 │
-├── Backend/                    # Python backend
+├── backend/
 │   ├── routes/
-│   │   └── predict.py          # Image prediction API
+│   │   └── predict.py
 │   ├── services/
-│   │   ├── gemini_service.py   # AI analysis
-│   │   └── tts_service.py      # Text-to-speech
-│   ├── main.py                 # Backend entry point
-│   └── requirements.txt        # Python dependencies
+│   │   ├── gemini_service.py
+│   │   ├── image_processor.py
+│   │   └── tts_service.py
+│   ├── main.py
+│   └── requirements.txt
 │
-├── frontend/                   # React frontend
+├── frontend/
 │   ├── src/
-│   │   ├── components/         # UI components
-│   │   ├── pages/              # Home, Upload, Result pages
-│   │   ├── services/           # API calls
-│   │   ├── config/             # API configuration
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── config/
 │   │   ├── App.js
 │   │   └── index.js
 │   └── package.json
 │
-├── README.md                   # Project documentation
-└── .gitignore                  # Git ignore rules
+├── models/
+│   └── food_freshness_model.h5
+│
+├── notebooks/
+│   ├── data_exploration.ipynb
+│   └── model_training.ipynb
+│
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-# Prerequisites
-- Before running FoodGuard-AI, install the following:
-- Python 3.8+ – Required to run the backend server
-- pip – Used to install Python dependencies
-- Node.js & npm – Required to run the React frontend
-- Google Gemini API Key – Used for AI food analysis and Live AI Agent responses
-- Internet Connection – Required for Gemini API communication
+# 7. LOCAL SETUP INSTRUCTIONS
 
-Download Python:
-https://www.python.org/downloads/
-
-Download Node.js:
-https://nodejs.org/
-
----
-
-# Installation
-
-## 1 Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/your-username/FoodGuard-AI.git
 cd FoodGuard-AI
 ```
 
-## 2 Create Virtual Environment
+---
+
+## Backend Setup
 
 ```bash
+cd backend
+
 python -m venv venv
-```
 
-### Activate Virtual Environment
-
-Windows
-
-```bash
+# Windows
 venv\Scripts\activate
-```
 
-Mac / Linux
-
-```bash
+# Mac/Linux
 source venv/bin/activate
-```
 
-## 3 Install Dependencies
-
-```bash
 pip install -r requirements.txt
 ```
 
-If requirements file is missing:
+### Set Google Gemini API Key
+
+Windows:
 
 ```bash
-pip install opencv-python tensorflow numpy matplotlib
+set GEMINI_API_KEY=your_api_key_here
+```
+
+Mac/Linux:
+
+```bash
+export GEMINI_API_KEY=your_api_key_here
+```
+
+Start Backend Server:
+
+```bash
+uvicorn main:app --reload --port 8000
+```
+
+Backend will run on:
+
+```
+http://localhost:8000
 ```
 
 ---
 
-# Running the Application
-
-Run the program using:
+## Frontend Setup
 
 ```bash
-python src/main.py
+cd frontend
+npm install
+npm start
 ```
 
-If using Jupyter Notebook:
+Frontend runs on:
 
-```bash
-jupyter notebook
+```
+http://localhost:3000
 ```
 
 ---
 
-# Usage
+# 8. USAGE GUIDE
 
-1. Run the application.
-2. Upload or capture a food image.
-3. The system processes the image.
-4. The AI model analyzes the image.
-5. Freshness classification is displayed.
+1. Launch both **backend** and **frontend servers**
+2. Open the application in your browser
+3. Upload or capture a food image
+4. Click **Analyze**
+5. View AI-generated freshness analysis
 
 ### Example Output
 
 ```
-Food Status: Fresh
-Confidence Score: 92%
+Detection Result
+----------------
+Food Item: Apple
+Status: FRESH
+Confidence: 94.3%
 Recommendation: Safe to consume
-```
 
-### Possible Results
-
-- **Fresh** → Safe to eat
-- **Moderate Risk** → Eat with caution
-- **Spoiled** → Do not eat
-
----
-
-# Code Overview
-
-## Image Processing Module
-
-`image_processing.py`
-
-Responsible for:
-
-- Image resizing
-- Normalization
-- Noise reduction
-
-### Example Code
-
-```python
-import cv2
-
-def preprocess_image(image_path):
-    image = cv2.imread(image_path)
-    image = cv2.resize(image, (224,224))
-    image = image / 255.0
-    return image
+Visual Indicators:
+- No mold detected
+- Natural color preserved
+- Firm texture expected
 ```
 
 ---
 
-## Model Prediction Module
+## Classification Categories
 
-`model_predict.py`
+| Category | Status | Action |
+|--------|--------|-------|
+| 🟢 Fresh | Optimal condition | Safe to eat |
+| 🟡 Moderate Risk | Early spoilage signs | Consume soon |
+| 🔴 Spoiled | Unsafe condition | Discard immediately |
 
-Loads the trained AI model and predicts food freshness.
+---
 
-### Example Code
+# 9. AI MODEL DETAILS
 
-```python
-from tensorflow.keras.models import load_model
+## Training Data
 
-model = load_model("model/food_freshness_model.h5")
+The model was trained on diverse datasets including:
 
-def predict_food(image):
-    prediction = model.predict(image)
-    return prediction
+- Fruits
+- Vegetables
+- Dairy products
+- Cooked foods
+
+Each dataset contains multiple freshness stages.
+
+---
+
+## Detection Capabilities
+
+| Capability | Description |
+|-----------|-------------|
+| Mold Detection | Identifies fungal growth patterns |
+| Color Analysis | Detects discoloration |
+| Texture Analysis | Detects surface degradation |
+| Structural Integrity | Detects shrinkage or breakdown |
+
+---
+
+## Model Architecture
+
+- Model Type: **Convolutional Neural Network (CNN)**
+- Input Size: **224 × 224**
+- Output: **3-Class Softmax**
+- Training Accuracy: **~91%**
+- Validation Accuracy: **~89%**
+
+---
+
+# 10. API REFERENCE
+
+## POST /predict
+
+Analyzes uploaded image.
+
+Request:
+
+- Method: `POST`
+- Content-Type: `multipart/form-data`
+- Body: Image file
+
+Example Response:
+
+```json
+{
+  "status": "success",
+  "prediction": {
+    "class": "fresh",
+    "confidence": 0.94,
+    "recommendation": "Safe to consume",
+    "indicators": ["No mold detected", "Natural color preserved"]
+  }
+}
 ```
 
 ---
 
-## Main Application
+## GET /health
 
-`main.py`
+Health check endpoint.
 
-Workflow:
-
-1 Load image  
-2 Preprocess image  
-3 Run model prediction  
-4 Display result
-
-### Example Code
-
-```python
-from image_processing import preprocess_image
-from model_predict import predict_food
-
-image = preprocess_image("sample_food.jpg")
-result = predict_food(image)
-
-print("Food Freshness Prediction:", result)
+```json
+{
+  "status": "healthy",
+  "model_loaded": true
+}
 ```
 
 ---
 
-# AI Model Explanation
+# 11. GOOGLE CLOUD DEPLOYMENT
 
-The AI model analyzes visual food features including:
-
-- Color distribution
-- Surface texture
-- Mold patterns
-- Structural irregularities
-
-The model then predicts one of the following categories:
-
-- Fresh
-- Moderate Risk
-- Spoiled
-
----
-
-# Troubleshooting
-
-## Model Not Loading
-
-Ensure:
-
-- Model exists in `model/` directory
-- Correct model path is used
-
-## Image Not Detected
-
-Check:
-
-- Image path
-- Image format (JPG, PNG)
-
-## Missing Dependencies
-
-Install dependencies again:
+Deploy backend using Google Cloud Run:
 
 ```bash
-pip install -r requirements.txt
+cd backend
+
+docker build -t foodguard-backend .
+
+gcloud run deploy foodguard-backend \
+  --image foodguard-backend \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated
 ```
 
 ---
 
-# Future Improvements
+# 12. TESTING
 
-Possible enhancements:
+Backend Tests:
 
-- Mobile application support
-- Real-time camera freshness detection
-- Larger training dataset
-- Smart kitchen integration
-- Cloud AI deployment
- ( This project showcases how AI and computer vision can help improve food safety while supporting smarter and more sustainable food consumption.)
+```bash
+pytest tests/
+```
+
+Frontend Tests:
+
+```bash
+npm test
+```
 
 ---
 
-# License
+# 13. TROUBLESHOOTING
 
-This project is licensed under the **MIT License**.
+| Issue | Solution |
+|------|---------|
+| Model not loading | Verify model file exists in `/models` directory |
+| Image upload error | Check image format and size |
+| Backend connection error | Verify API URL configuration |
+| Slow predictions | Ensure sufficient backend resources |
+| Gemini API errors | Verify API key environment variable |
 
-You are free to use, modify, and distribute it for educational and research purposes.
+---
+
+# 14. CONTRIBUTORS — TEAM GENIX
+
+| Name | GitHub | Role |
+|----|----|----|
+| **Maryam Fatima** | https://github.com/maryam-ca | Backend Integration, Documentation |
+| **Shahan Waheed** | https://github.com/Shahan-Waheed728 | ML Model Development, AI Integration |
+| **Kashan Saqib** | https://github.com/Kashan | Frontend Development |
+| **Mahad Nazir** | https://github.com/MahadNazir | Architecture Design, Research |
+
+---
+
+# 15. FUTURE ENHANCEMENTS
+
+| Enhancement | Description |
+|-----------|-------------|
+| Mobile Application | iOS & Android support |
+| Real-Time Video Detection | Continuous camera monitoring |
+| Larger Dataset | Improve model accuracy |
+| Smart Kitchen Integration | IoT appliance integration |
+| Multi-Language Support | Global accessibility |
+
+---
+
+# 16. DISCLAIMER
+
+FoodGuard-AI is designed for **demonstration and informational purposes only**.
+
+The system provides AI-generated analysis based on visual indicators and should **not replace professional judgment or food safety guidelines**.
+
+If there is any doubt about food safety, always **discard the food**.
+
+---
+
+# 17. ACKNOWLEDGMENT
+
+We thank the **Google Gemini Live Agent Challenge** for providing a platform to build meaningful AI solutions.
+
+FoodGuard-AI demonstrates how **AI + Computer Vision + Cloud technologies** can be used to solve real-world problems such as food safety and waste reduction.
+
+---
+
+**Made with ❤️ for safer food and a healthier planet by Team Genix**
