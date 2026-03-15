@@ -6,7 +6,7 @@ const API_ENDPOINTS = {
   PREDICT: `${API_BASE_URL}/${API_VERSION}/predict`,
   PREDICT_WITH_VOICE: `${API_BASE_URL}/${API_VERSION}/predict-with-voice`,
   HEALTH: `${API_BASE_URL}/`,
-  TEST: `${API_BASE_URL}/test`
+  TEST: `${API_BASE_URL}/docs`
 };
 
 class ApiService {
