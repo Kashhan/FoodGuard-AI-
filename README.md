@@ -313,6 +313,7 @@ Each dataset contains multiple freshness stages.
 - Training Accuracy: **~91%**
 - Validation Accuracy: **~89%**
 
+![image alt](https://github.com/maryam-ca/FoodGuard-AI-/blob/0a6d0065cbb5a799fa52a77ba0ce6b26b123690e/github%20post.png)
 ---
 
 # 10. API REFERENCE
