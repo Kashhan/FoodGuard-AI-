@@ -126,11 +126,13 @@ Output includes:
 | Layer | Technology |
 |------|-----------|
 | **Frontend** | React.js, HTML5, CSS3, JavaScript |
-| **Backend** | Python, FastAPI, OpenCV |
+| **Backend** | Python, FastAPI |
 | **Machine Learning** | TensorFlow, Keras |
 | **AI Integration** | Google Gemini API |
 | **Cloud Deployment** | Google Cloud Run |
-| **Development Tools** | Git, GitHub, VS Code, Jupyter Notebook |
+| **Development Tools** | Git, GitHub, VS Code |
+
+![image alt](https://github.com/maryam-ca/FoodGuard-AI-/blob/0a6d0065cbb5a799fa52a77ba0ce6b26b123690e/github%20post.png)
 
 ---
 
@@ -313,14 +315,13 @@ Each dataset contains multiple freshness stages.
 - Training Accuracy: **~91%**
 - Validation Accuracy: **~89%**
 
-![image alt](https://github.com/maryam-ca/FoodGuard-AI-/blob/0a6d0065cbb5a799fa52a77ba0ce6b26b123690e/github%20post.png)
+
 ---
 
 # 10. API REFERENCE
 
 ## POST /predict
 
-Analyzes uploaded image.
 
 Request:
 
@@ -408,9 +409,10 @@ npm test
 | Name | GitHub | Role |
 |----|----|----|
 | **Maryam Fatima** | https://github.com/maryam-ca | Backend Integration, Documentation |
-| **Shahan Waheed** | https://github.com/Shahan-Waheed728 | ML Model Development, AI Integration |
+| **Shahan Waheed** | https://github.com/Shahan-Waheed728 |Model Development, AI Integration,Backend |
 | **Kashan Saqib** | https://github.com/Kashan | Frontend Development |
 | **Mahad Nazir** | https://github.com/MahadNazir | Architecture Design, Research |
+| **Mahad Nazir** | https://github.com/MahadNazir | Documentation, video editing |
 
 ---
 
@@ -444,4 +446,4 @@ FoodGuard-AI demonstrates how **AI + Computer Vision + Cloud technologies** can 
 
 ---
 
-**Made with ❤️ for safer food and a healthier planet by Team Genix**
+**Made with ❤️ for safer food and a healthier planet by Team Anomalies**
