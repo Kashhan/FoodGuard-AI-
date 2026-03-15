@@ -1,5 +1,5 @@
 // Direct API URLs - Config ki zaroorat nahi
-const API_BASE_URL = "http://localhost:8000";  // Hardcoded for testing
+const API_BASE_URL = "https://foodguard-ai-backend.onrender.com";  // Hardcoded for testing
 const API_VERSION = "api/v1";
 
 const API_ENDPOINTS = {
