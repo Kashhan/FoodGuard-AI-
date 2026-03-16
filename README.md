@@ -306,8 +306,8 @@ npm test
 | Name | GitHub | Role | Contribution |
 |------|--------|------|--------------|
 | **Maryam Fatima ⭐ (Team Lead)** | https://github.com/maryam-ca | Backend Developer | Backend Integration, Documentation |
-| Shahan Waheed | https://github.com/Shahan-Waheed728 | AI Engineer | Model Development, AI Integration, Backend |
-| Kashan Saqib | https://github.com/Kashan | Frontend Developer | Frontend Development |
+| Shahan Waheed | https://github.com/Shahan-Waheed728 | AI Engineer | Cloud Deployment, AI Integration, Backend |
+| Kashan Saqib | https://github.com/Kashan | Frontend Developer | Frontend Development, App Deployment |
 | Mahad Nazir | https://github.com/MahadNazir | System Architect | Architecture Design, Research |
 | Ruhmma Chaudhary | https://github.com/ruhmmachaudhary-rgb | Documentation & Media | Documentation, Video Editing |
 ---
@@ -324,7 +324,7 @@ npm test
 
 ---
 
-# 14. 📚 Project Resources
+# 14.  PROJECT RESOURCES
 
 ### 🎥 Demo Video
 
@@ -334,7 +334,7 @@ Watch the full working demonstration of **FoodGuard-AI**:
 
 ---
 
-### ✍️ Project Blog (Medium)
+###  Project Blog (Medium)
 
 Read the detailed article explaining the development process, architecture, and insights behind the project:
 
@@ -342,7 +342,7 @@ Read the detailed article explaining the development process, architecture, and 
 
 ---
 
-### 🌐 Project Documentation
+###  Project Documentation
 
 Complete project documentation and system architecture:
 
@@ -360,9 +360,11 @@ If there is any doubt about food safety, always **discard the food**.
 
 # 16. ACKNOWLEDGMENT
 
-We thank the **Google Gemini Live Agent Challenge** for providing a platform to build meaningful AI solutions.
+We extend our sincere gratitude to the **Google Gemini Live Agent Challenge** for providing a global platform that empowers developers to design innovative AI solutions addressing real-world challenges.
 
-FoodGuard-AI demonstrates how **AI + Gemini APIS + Cloud technologies** can be used to solve real-world problems such as food safety and waste reduction.
+**FoodGuard-AI** was developed as part of this challenge to demonstrate how modern artificial intelligence, computer vision, and cloud technologies can be leveraged to tackle critical issues such as **food safety assessment and food waste reduction**.
+
+The system was built using a combination of advanced tools and frameworks, including **Google Gemini APIs, Google Cloud services, Docker, FastAPI, Uvicorn, Python, JavaScript, and image processing libraries such as Pillow**, enabling efficient AI-powered image analysis and scalable backend deployment.
 
 ---
 
