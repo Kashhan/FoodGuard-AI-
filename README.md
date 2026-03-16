@@ -79,6 +79,10 @@ Responsibilities:
 - Display Detection Results
 - Send Image Request to Backend API
 
+![FoodGuard-AI System Architecture](diagram1.png)
+
+![FoodGuard-AI System Architecture1](diagram2.png)
+
 ---
 
 ## Backend Layer
@@ -126,13 +130,12 @@ Output includes:
 | Layer | Technology |
 |------|-----------|
 | **Frontend** | React.js, HTML5, CSS3, JavaScript |
-| **Backend** | Python, FastAPI |
-| **Machine Learning** | TensorFlow, Keras |
-| **AI Integration** | Google Gemini API |
-| **Cloud Deployment** | Google Cloud Run |
+| **Backend** | Python, FastAPI, Uvicorn |
+| **AI Integration** | Google Gemini APIs |
+| **Image Processing** | Pillow (Image Processing), NumPy |
+| **Cloud Deployment** | Docker, Google Cloud Build, Artifact Registry, Google Cloud Run |
 | **Development Tools** | Git, GitHub, VS Code |
 
-![image alt](https://github.com/maryam-ca/FoodGuard-AI-/blob/0a6d0065cbb5a799fa52a77ba0ce6b26b123690e/github%20post.png)
 
 ---
 
@@ -294,27 +297,6 @@ The model was trained on diverse datasets including:
 
 Each dataset contains multiple freshness stages.
 
----
-
-## Detection Capabilities
-
-| Capability | Description |
-|-----------|-------------|
-| Mold Detection | Identifies fungal growth patterns |
-| Color Analysis | Detects discoloration |
-| Texture Analysis | Detects surface degradation |
-| Structural Integrity | Detects shrinkage or breakdown |
-
----
-
-## Model Architecture
-
-- Model Type: **Convolutional Neural Network (CNN)**
-- Input Size: **224 × 224**
-- Output: **3-Class Softmax**
-- Training Accuracy: **~91%**
-- Validation Accuracy: **~89%**
-
 
 ---
 
@@ -404,7 +386,7 @@ npm test
 
 ---
 
-# 14. CONTRIBUTORS — TEAM GENIX
+# 14. CONTRIBUTORS — TEAM ANOMOLIES
 
 | Name | GitHub | Role |
 |----|----|----|
@@ -412,7 +394,7 @@ npm test
 | **Shahan Waheed** | https://github.com/Shahan-Waheed728 |Model Development, AI Integration,Backend |
 | **Kashan Saqib** | https://github.com/Kashan | Frontend Development |
 | **Mahad Nazir** | https://github.com/MahadNazir | Architecture Design, Research |
-| **Mahad Nazir** | https://github.com/MahadNazir | Documentation, video editing |
+| **Ruhmma Chaudhary** | [https://github.com/ruhmmachaudhary-rgb](https://github.com/ruhmmachaudhary-rgb) | Documentation, video editing |
 
 ---
 
