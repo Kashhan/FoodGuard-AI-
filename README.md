@@ -4,8 +4,7 @@
 
 FoodGuard-AI is an AI-powered food freshness and safety detection system that analyzes food images using computer vision and machine learning to identify indicators of spoilage such as color degradation, mold formation, and texture deterioration. The system classifies food into freshness categories (fresh, moderately risky, or spoiled) and provides instant, data-driven insights to help users make safer consumption decisions while minimizing unnecessary food waste. Developed for the international Google Gemini Live Agent Challenge, the project demonstrates the practical application of AI and cloud technologies in solving real-world problems by enabling users to perform quick food safety assessments through simple image analysis. Detailed project documentation and system architecture can be accessed here:
 
-🌐 **Live Project Documentation:**  
-https://food-guard-doc.vercel.app/
+
 
 
 
