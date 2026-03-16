@@ -31,7 +31,7 @@ https://food-guard-doc.vercel.app/
 
 ---
 
-# 3. KEY FEATURES
+# 2. KEY FEATURES
 
 | Feature | Description |
 |-------|-------------|
@@ -45,7 +45,7 @@ https://food-guard-doc.vercel.app/
 
 ---
 
-# 4. SYSTEM ARCHITECTURE
+# 3. SYSTEM ARCHITECTURE
 
 
 
@@ -54,7 +54,7 @@ https://food-guard-doc.vercel.app/
 
 ---
 
-# 5. TECHNOLOGY STACK
+# 4. TECHNOLOGY STACK
 
 | Layer | Technology |
 |------|-----------|
@@ -68,7 +68,7 @@ https://food-guard-doc.vercel.app/
 
 ---
 
-# 6. PROJECT STRUCTURE
+# 5. PROJECT STRUCTURE
 
 ```
 FoodGuard-AI/
@@ -106,7 +106,7 @@ FoodGuard-AI/
 
 ---
 
-# 7. LOCAL SETUP INSTRUCTIONS
+# 6. LOCAL SETUP INSTRUCTIONS
 
 ## Clone Repository
 
@@ -177,7 +177,7 @@ http://localhost:3000
 
 ---
 
-# 8. USAGE GUIDE
+# 7. USAGE GUIDE
 
 1. Launch both **backend** and **frontend servers**
 2. Open the application in your browser
@@ -213,7 +213,7 @@ Visual Indicators:
 
 ---
 
-# 9. AI MODEL DETAILS
+# 8. AI MODEL DETAILS
 
 ## Training Data
 
@@ -229,7 +229,7 @@ Each dataset contains multiple freshness stages.
 
 ---
 
-# 10. API REFERENCE
+# 9. API REFERENCE
 
 ## POST /predict
 
@@ -269,7 +269,7 @@ Health check endpoint.
 
 ---
 
-# 11. GOOGLE CLOUD DEPLOYMENT
+# 10. GOOGLE CLOUD DEPLOYMENT
 
 Deploy backend using Google Cloud Run:
 
@@ -287,7 +287,7 @@ gcloud run deploy foodguard-backend \
 
 ---
 
-# 12. TESTING
+# 11. TESTING
 
 Backend Tests:
 
@@ -303,7 +303,7 @@ npm test
 
 ---
 
-# 13. TROUBLESHOOTING
+# 12. TROUBLESHOOTING
 
 | Issue | Solution |
 |------|---------|
@@ -315,7 +315,7 @@ npm test
 
 ---
 
-# 14. CONTRIBUTORS — TEAM ANOMOLIES
+# 13. CONTRIBUTORS — TEAM ANOMOLIES
 
 | Name | GitHub | Role |
 |----|----|----|
@@ -327,7 +327,7 @@ npm test
 
 ---
 
-# 15. FUTURE ENHANCEMENTS
+# 14. FUTURE ENHANCEMENTS
 
 | Enhancement | Description |
 |-----------|-------------|
@@ -339,7 +339,7 @@ npm test
 
 ---
 
-# 16. DISCLAIMER
+# 15. DISCLAIMER
 
 FoodGuard-AI is designed for **demonstration and informational purposes only**.
 
@@ -349,7 +349,7 @@ If there is any doubt about food safety, always **discard the food**.
 
 ---
 
-# 17. ACKNOWLEDGMENT
+# 16. ACKNOWLEDGMENT
 
 We thank the **Google Gemini Live Agent Challenge** for providing a platform to build meaningful AI solutions.
 
