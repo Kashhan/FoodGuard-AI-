@@ -1,35 +1,13 @@
 # FoodGuard-AI
 ## AI Food Freshness and Safety Detection System
+# 1. PROJECT OVERVIEW
 
-A working demonstration of an **AI-powered food freshness detection system** that analyzes food images using computer vision and machine learning techniques. The system evaluates visual indicators such as **color changes, mold growth, and texture deterioration** to determine whether food is fresh, moderately risky, or spoiled.
-
-FoodGuard-AI helps users make safer food consumption decisions while also reducing unnecessary **food waste** by providing quick AI-based freshness detection.
+FoodGuard-AI is an AI-powered food freshness and safety detection system that analyzes food images using computer vision and machine learning to identify indicators of spoilage such as color degradation, mold formation, and texture deterioration. The system classifies food into freshness categories (fresh, moderately risky, or spoiled) and provides instant, data-driven insights to help users make safer consumption decisions while minimizing unnecessary food waste. Developed for the international Google Gemini Live Agent Challenge, the project demonstrates the practical application of AI and cloud technologies in solving real-world problems by enabling users to perform quick food safety assessments through simple image analysis. Detailed project documentation and system architecture can be accessed here:
 
 🌐 **Live Project Documentation:**  
 https://food-guard-doc.vercel.app/
 
-Developed for the **Google Gemini Live Agent Challenge** using Google Gemini AI and Google Cloud technologies.
 
----
-
-# 1. PROJECT
-## INTELLIGENT VISION AI
-
-FoodGuard-AI is a specialized AI system that analyzes food images to detect freshness and spoilage indicators. Using advanced computer vision and machine learning, the system evaluates visual cues like color degradation, mold formation, and textural changes to provide real-time food safety assessments.
-
-Developed as a practical AI solution to reduce food waste and prevent foodborne illnesses by empowering users with instant, data-driven insights about their food.
-
-Built for the **GeminiAgentChallenge** — a platform that gives developers the opportunity to build impactful AI systems that solve real-world problems.
-
----
-
-# 2. PROJECT OVERVIEW
-
-FoodGuard-AI transforms how people assess food safety. Instead of relying only on expiration dates or subjective judgment, users can simply take a photo and receive an instant AI-powered analysis.
-
-The system classifies food into freshness categories and provides clear, actionable recommendations.
-
-This project demonstrates the practical application of **computer vision in everyday life**, helping households and individuals make safer and more informed decisions while contributing to global efforts to reduce food waste.
 
 ## System Workflow
 
