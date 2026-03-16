@@ -16,7 +16,7 @@ function About() {
     },
     {
       name: "Kashan Saqib",
-      role: "Frontend Development",
+      role: "Frontend Development & App Deployment",
     },
     {
       name: "Mahad Nazir",
