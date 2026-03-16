@@ -8,7 +8,11 @@ function About() {
     },
     {
       name: "Shahan Waheed",
+
       role: "Model Development, AI Integration & Backend",
+
+      role: "Model Development, Backend, audio facility",
+      // feedc34 (Add architecture diagrams)
     },
     {
       name: "Kashan Saqib",
