@@ -1,35 +1,12 @@
 # FoodGuard-AI
 ## AI Food Freshness and Safety Detection System
+# 1. PROJECT OVERVIEW
 
-A working demonstration of an **AI-powered food freshness detection system** that analyzes food images using computer vision and machine learning techniques. The system evaluates visual indicators such as **color changes, mold growth, and texture deterioration** to determine whether food is fresh, moderately risky, or spoiled.
+FoodGuard-AI is an AI-powered food freshness and safety detection system that analyzes food images using computer vision and machine learning to identify indicators of spoilage such as color degradation, mold formation, and texture deterioration. The system classifies food into freshness categories (fresh, moderately risky, or spoiled) and provides instant, data-driven insights to help users make safer consumption decisions while minimizing unnecessary food waste. Developed for the international Google Gemini Live Agent Challenge, the project demonstrates the practical application of AI and cloud technologies in solving real-world problems by enabling users to perform quick food safety assessments through simple image analysis. Detailed project documentation and system architecture can be accessed here:
 
-FoodGuard-AI helps users make safer food consumption decisions while also reducing unnecessary **food waste** by providing quick AI-based freshness detection.
 
-🌐 **Live Project Documentation:**  
-https://food-guard-doc.vercel.app/
 
-Developed for the **Google Gemini Live Agent Challenge** using Google Gemini AI and Google Cloud technologies.
 
----
-
-# 1. PROJECT
-## INTELLIGENT VISION AI
-
-FoodGuard-AI is a specialized AI system that analyzes food images to detect freshness and spoilage indicators. Using advanced computer vision and machine learning, the system evaluates visual cues like color degradation, mold formation, and textural changes to provide real-time food safety assessments.
-
-Developed as a practical AI solution to reduce food waste and prevent foodborne illnesses by empowering users with instant, data-driven insights about their food.
-
-Built for the **GeminiAgentChallenge** — a platform that gives developers the opportunity to build impactful AI systems that solve real-world problems.
-
----
-
-# 2. PROJECT OVERVIEW
-
-FoodGuard-AI transforms how people assess food safety. Instead of relying only on expiration dates or subjective judgment, users can simply take a photo and receive an instant AI-powered analysis.
-
-The system classifies food into freshness categories and provides clear, actionable recommendations.
-
-This project demonstrates the practical application of **computer vision in everyday life**, helping households and individuals make safer and more informed decisions while contributing to global efforts to reduce food waste.
 
 ## System Workflow
 
@@ -53,7 +30,7 @@ This project demonstrates the practical application of **computer vision in ever
 
 ---
 
-# 3. KEY FEATURES
+# 2. KEY FEATURES
 
 | Feature | Description |
 |-------|-------------|
@@ -67,65 +44,16 @@ This project demonstrates the practical application of **computer vision in ever
 
 ---
 
-# 4. SYSTEM ARCHITECTURE
+# 3. SYSTEM ARCHITECTURE
 
-## User Interface Layer
-**Frontend (Web / Mobile Interface)**
 
-Responsibilities:
 
-- Image Upload or Camera Capture
-- User Interface Interaction
-- Display Detection Results
-- Send Image Request to Backend API
+![image alt](https://github.com/maryam-ca/FoodGuard-AI-/blob/3a33844904c3cd11184b8d0333f252a4aa430471/Readme%20IMG.png)
 
-![FoodGuard-AI System Architecture](diagram1.png)
-
-![FoodGuard-AI System Architecture1](diagram2.png)
 
 ---
 
-## Backend Layer
-
-Handles application logic and communication with AI services.
-
-Components:
-
-- API Endpoints
-- Image Handler
-- Preprocessing Logic
-- Request Processing
-- AI Model Invocation
-
----
-
-## AI Processing Layer
-
-Core intelligence of the system.
-
-Responsibilities:
-
-- Computer Vision Analysis
-- Pattern Recognition
-- Freshness Classification
-- Spoilage Detection
-
----
-
-## Response Layer
-
-Generates the final output returned to the user.
-
-Output includes:
-
-- Freshness Category
-- Confidence Score
-- Safety Recommendation
-- Visual Indicators
-
----
-
-# 5. TECHNOLOGY STACK
+# 4. TECHNOLOGY STACK
 
 | Layer | Technology |
 |------|-----------|
@@ -139,7 +67,7 @@ Output includes:
 
 ---
 
-# 6. PROJECT STRUCTURE
+# 5. PROJECT STRUCTURE
 
 ```
 FoodGuard-AI/
@@ -177,7 +105,7 @@ FoodGuard-AI/
 
 ---
 
-# 7. LOCAL SETUP INSTRUCTIONS
+# 6. LOCAL SETUP INSTRUCTIONS
 
 ## Clone Repository
 
@@ -248,7 +176,7 @@ http://localhost:3000
 
 ---
 
-# 8. USAGE GUIDE
+# 7. USAGE GUIDE
 
 1. Launch both **backend** and **frontend servers**
 2. Open the application in your browser
@@ -284,23 +212,9 @@ Visual Indicators:
 
 ---
 
-# 9. AI MODEL DETAILS
-
-## Training Data
-
-The model was trained on diverse datasets including:
-
-- Fruits
-- Vegetables
-- Dairy products
-- Cooked foods
-
-Each dataset contains multiple freshness stages.
 
 
----
-
-# 10. API REFERENCE
+# 8. API REFERENCE
 
 ## POST /predict
 
@@ -340,7 +254,7 @@ Health check endpoint.
 
 ---
 
-# 11. GOOGLE CLOUD DEPLOYMENT
+# 9. GOOGLE CLOUD DEPLOYMENT
 
 Deploy backend using Google Cloud Run:
 
@@ -358,7 +272,7 @@ gcloud run deploy foodguard-backend \
 
 ---
 
-# 12. TESTING
+# 10. TESTING
 
 Backend Tests:
 
@@ -374,7 +288,7 @@ npm test
 
 ---
 
-# 13. TROUBLESHOOTING
+# 11. TROUBLESHOOTING
 
 | Issue | Solution |
 |------|---------|
@@ -386,19 +300,19 @@ npm test
 
 ---
 
-# 14. CONTRIBUTORS — TEAM ANOMOLIES
+# 12. CONTRIBUTORS — TEAM ANOMOLIES
 
-| Name | GitHub | Role |
-|----|----|----|
-| **Maryam Fatima** | https://github.com/maryam-ca | Backend Integration, Documentation |
-| **Shahan Waheed** | https://github.com/Shahan-Waheed728 |Model Development, AI Integration,Backend |
-| **Kashan Saqib** | https://github.com/Kashan | Frontend Development |
-| **Mahad Nazir** | https://github.com/MahadNazir | Architecture Design, Research |
-| **Ruhmma Chaudhary** | [https://github.com/ruhmmachaudhary-rgb](https://github.com/ruhmmachaudhary-rgb) | Documentation, video editing |
 
+| Name | GitHub | Role | Contribution |
+|------|--------|------|--------------|
+| **Maryam Fatima ⭐ (Team Lead)** | https://github.com/maryam-ca | Backend Developer | Backend Integration, Documentation |
+| Shahan Waheed | https://github.com/Shahan-Waheed728 | AI Engineer | Model Development, AI Integration, Backend |
+| Kashan Saqib | https://github.com/Kashan | Frontend Developer | Frontend Development |
+| Mahad Nazir | https://github.com/MahadNazir | System Architect | Architecture Design, Research |
+| Ruhmma Chaudhary | https://github.com/ruhmmachaudhary-rgb | Documentation & Media | Documentation, Video Editing |
 ---
 
-# 15. FUTURE ENHANCEMENTS
+# 13. FUTURE ENHANCEMENTS
 
 | Enhancement | Description |
 |-----------|-------------|
@@ -410,7 +324,31 @@ npm test
 
 ---
 
-# 16. DISCLAIMER
+# 14. 📚 Project Resources
+
+### 🎥 Demo Video
+
+Watch the full working demonstration of **FoodGuard-AI**:
+
+[![FoodGuard-AI Demo](https://img.youtube.com/vi/2Opr_q1ve28/maxresdefault.jpg)](https://www.youtube.com/watch?v=2Opr_q1ve28)
+
+---
+
+### ✍️ Project Blog (Medium)
+
+Read the detailed article explaining the development process, architecture, and insights behind the project:
+
+🔗 https://medium.com/@ruhmmachaudhary/foodguard-ai-ca44d9c0712f
+
+---
+
+### 🌐 Project Documentation
+
+Complete project documentation and system architecture:
+
+🔗 https://food-guard-doc.vercel.app/
+
+# 15. DISCLAIMER
 
 FoodGuard-AI is designed for **demonstration and informational purposes only**.
 
@@ -420,11 +358,11 @@ If there is any doubt about food safety, always **discard the food**.
 
 ---
 
-# 17. ACKNOWLEDGMENT
+# 16. ACKNOWLEDGMENT
 
 We thank the **Google Gemini Live Agent Challenge** for providing a platform to build meaningful AI solutions.
 
-FoodGuard-AI demonstrates how **AI + Computer Vision + Cloud technologies** can be used to solve real-world problems such as food safety and waste reduction.
+FoodGuard-AI demonstrates how **AI + Gemini APIS + Cloud technologies** can be used to solve real-world problems such as food safety and waste reduction.
 
 ---
 
