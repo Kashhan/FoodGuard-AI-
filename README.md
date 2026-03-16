@@ -324,7 +324,7 @@ npm test
 
 ---
 
-# 14. 📚 Project Resources
+# 14.  PROJECT RESOURCES
 
 ### 🎥 Demo Video
 
@@ -334,7 +334,7 @@ Watch the full working demonstration of **FoodGuard-AI**:
 
 ---
 
-### ✍️ Project Blog (Medium)
+###  Project Blog (Medium)
 
 Read the detailed article explaining the development process, architecture, and insights behind the project:
 
@@ -342,7 +342,7 @@ Read the detailed article explaining the development process, architecture, and 
 
 ---
 
-### 🌐 Project Documentation
+###  Project Documentation
 
 Complete project documentation and system architecture:
 
