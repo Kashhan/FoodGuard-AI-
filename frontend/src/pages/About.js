@@ -3,19 +3,24 @@ import React from "react";
 function About() {
   const team = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "AI Research Lead",
-      bio: "PhD in Computer Vision with 10+ years experience",
+      name: "Maryam Fatima",
+      role: "Project Lead, Backend Integration & Documentation",
     },
     {
-      name: "Michael Chen",
-      role: "Lead Developer",
-      bio: "Full-stack developer specializing in ML applications",
+      name: "Shahan Waheed",
+      role: "Model Development, AI Integration & Backend",
     },
     {
-      name: "Dr. Emily Rodriguez",
-      role: "Food Scientist",
-      bio: "Expert in food quality assessment and safety",
+      name: "Kashan Saqib",
+      role: "Frontend Development",
+    },
+    {
+      name: "Mahad Nazir",
+      role: "System Architecture & Research",
+    },
+    {
+      name: "Ruhmma Chaudhary",
+      role: "Documentation & Video Production",
     },
   ];
 
