@@ -360,11 +360,11 @@ If there is any doubt about food safety, always **discard the food**.
 
 # 16. ACKNOWLEDGMENT
 
-We extend our sincere gratitude to the **Google Gemini Live Agent Challenge** for providing a global platform that empowers developers to design innovative AI solutions addressing real-world challenges.
+We are grateful to the [Gemini Live Agent Challenge](https://geminiliveagentchallenge.devpost.com/?ref_feature=challenge&ref_medium=your-open-hackathons&ref_content=Submissions+open&_gl=1*c9b0gz*_gcl_au*MTU2NjE5Njc4My4xNzczNTYwMzE4*_ga*MTk2MDcxODU5Ny4xNzczNTYwMzIx*_ga_0YHJK3Y10M*czE3NzM2ODY2OTMkbzIkZzEkdDE3NzM2ODgxNjUkajU2JGwwJGgw) for giving us the opportunity to build this project. The challenge encouraged our team to think creatively and develop an AI-powered solution that combines modern web technologies with intelligent AI services.
 
-**FoodGuard-AI** was developed as part of this challenge to demonstrate how modern artificial intelligence, computer vision, and cloud technologies can be leveraged to tackle critical issues such as **food safety assessment and food waste reduction**.
+Our system integrates a React-based frontend, a Python FastAPI backend, and AI capabilities powered by Google Gemini, creating a scalable architecture for processing requests and generating meaningful AI responses.
 
-The system was built using a combination of advanced tools and frameworks, including **Google Gemini APIs, Google Cloud services, Docker, FastAPI, Uvicorn, Python, JavaScript, and image processing libraries such as Pillow**, enabling efficient AI-powered image analysis and scalable backend deployment.
+Developed using Google Gemini AI and Google Cloud technologies.
 
 ---
 
